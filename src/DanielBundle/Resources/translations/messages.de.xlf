@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="de" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="daniel.admin.title">
+                <source>daniel.admin.title</source>
+                <target>Admin Bereich</target>
+            </trans-unit>
+            <trans-unit id="daniel.title">
+                <source>daniel.title</source>
+                <target>A Daniel a Day</target>
+            </trans-unit>
+            <trans-unit id="daniel.nav.homepage">
+                <source>daniel.nav.homepage</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="daniel.nav.user">
+                <source>daniel.nav.user</source>
+                <target>Benutzer</target>
+            </trans-unit>
+            <trans-unit id="daniel.nav.image">
+                <source>daniel.nav.image</source>
+                <target>Bilder</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,10 @@
+parameters:
+    # entities
+    daniel.user.class: DanielBundle\Entity\User
+    daniel.image.class: DanielBundle\Entity\Image
+
+services:
+    DanielBundle\Entity\User:
+        class: "%daniel.user.class%"
+    DanielBundle\Entity\Image:
+        class: "%daniel.image.class%"

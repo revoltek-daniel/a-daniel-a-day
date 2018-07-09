@@ -1,0 +1,9 @@
+parameters:
+    # manager
+    daniel.image.manager.class: DanielBundle\Manager\ImageManager
+    daniel.file.path: uploads/images
+
+services:
+    DanielBundle\Manager\ImageManager:
+        class: "%daniel.image.manager.class%"
+        arguments: ["@doctrine.orm.entity_manager", "@knp_paginator", "%daniel.image.class%", "%daniel.file.path%"]

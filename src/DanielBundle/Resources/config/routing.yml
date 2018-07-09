@@ -1,0 +1,22 @@
+daniel_default:
+    prefix:   /
+    resource: "@DanielBundle/Controller/DefaultController.php"
+    type:     annotation
+
+daniel_user:
+    prefix:  /admin
+    resource: "@DanielBundle/Controller/UserController.php"
+    type:     annotation
+
+daniel_image:
+    prefix:  /admin
+    resource: "@DanielBundle/Controller/ImageController.php"
+    type:     annotation
+
+security_login:
+    path:     /login
+    defaults: { _controller: DanielBundle:Security:login }
+
+security_logout:
+    path:     /logout
+    defaults: { _controller: DanielBundle:Security:logout }

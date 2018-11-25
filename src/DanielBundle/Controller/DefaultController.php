@@ -10,9 +10,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
- * Class FormController
+ * Class DefaultController
  *
- * @package AutodeskBundle\Controller
+ * @package DanielBundle\Controller
  */
 class DefaultController extends Controller
 {
@@ -57,6 +57,25 @@ class DefaultController extends Controller
             'image' => $image,
             'before' => reset($beforeEntry),
             'next' => reset($nextEntry),
+        ];
+    }
+
+    /**
+     *
+     * @Route("/rss", name="rss")
+     * @Method("GET")
+     *
+     * @param ImageManager $imageManager
+     *
+     * @return array
+     * @Template("@Daniel/Default/rss.xml.twig")
+     */
+    public function rssAction(ImageManager $imageManager)
+    {
+        $images = $imageManager->findAllByReverseOrder();
+
+        return [
+            'images' => $images,
         ];
     }
 

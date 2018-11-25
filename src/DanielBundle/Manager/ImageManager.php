@@ -154,6 +154,19 @@ class ImageManager
      *
      * @return mixed
      */
+    public function findAllByReverseOrder()
+    {
+        $dql = 'SELECT g FROM DanielBundle:Image g ORDER BY g.id DESC';
+        $query = $this->entityManager->createQuery($dql);
+
+        return $query->execute();
+    }
+
+    /**
+     *
+     *
+     * @return mixed
+     */
     public function getLastEntry()
     {
         $dql   = 'SELECT g FROM DanielBundle:Image g ORDER BY g.id DESC';

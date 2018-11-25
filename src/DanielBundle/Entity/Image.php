@@ -22,7 +22,6 @@ class Image
      */
     protected $id;
 
-
     /**
      * @Assert\Length(
      *      min = 2,
@@ -53,9 +52,23 @@ class Image
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", )
      */
     protected $sorting  = 0;
+
+    /**
+     * @var \DateTime
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    protected $created;
+
+    /**
+     * Image constructor.
+     */
+    public function __construct()
+    {
+        $this->created = new \DateTime('now');
+    }
 
     /**
      * Get Id.
@@ -151,6 +164,30 @@ class Image
     public function setSorting($sorting)
     {
         $this->sorting = $sorting;
+
+        return $this;
+    }
+
+    /**
+     * Get Created.
+     *
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set Created.
+     *
+     * @param \DateTime $created
+     *
+     * @return Image
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
 
         return $this;
     }

@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class DefaultController
@@ -67,16 +68,22 @@ class DefaultController extends Controller
      *
      * @param ImageManager $imageManager
      *
-     * @return array
-     * @Template("@Daniel/Default/rss.xml.twig")
+     * @return Response
      */
     public function rssAction(ImageManager $imageManager)
     {
         $images = $imageManager->findAllByReverseOrder();
 
-        return [
-            'images' => $images,
-        ];
+        $response = new Response();
+        $response->headers->set('Content-Type', 'text/xml');
+
+        return $this->render(
+            "@Daniel/Default/rss.xml.twig",
+            [
+                'images' => $images,
+            ],
+            $response
+        );
     }
 
     /**

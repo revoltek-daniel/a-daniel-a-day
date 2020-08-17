@@ -10,7 +10,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 /**
  * Class SecurityController
  *
- * @package AutodeskBundle\Controller
+ * @package DanielBundle\Controller
  */
 class SecurityController extends Controller
 {

@@ -42,7 +42,7 @@ class UserType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AutodeskBundle\Entity\User'
+            'data_class' => 'DanielBundle\Entity\User'
         ));
     }
 
@@ -51,7 +51,7 @@ class UserType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'autodeskbundle_user';
+        return 'danielbundle_user';
     }
 
     protected function addPassword(FormBuilderInterface $builder)

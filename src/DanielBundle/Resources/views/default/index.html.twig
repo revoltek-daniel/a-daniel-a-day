@@ -10,9 +10,10 @@
     </div>
 
     <div class="control">
-        <a href="{{ path('image_detail',  { 'id': before.id, 'slug': before.title|slugify }) }}" class="btn">
-            <i class="fa fa-caret-left"></i> Älterer Eintrag</a>
-
+        {% if before %}
+            <a href="{{ path('image_detail',  { 'id': before.id, 'slug': before.title|slugify }) }}" class="btn">
+                <i class="fa fa-caret-left"></i> Älterer Eintrag</a>
+        {% endif %}
         <a href="{{ path('image_overview') }}">Overview</a>
     </div>
 {% endblock %}

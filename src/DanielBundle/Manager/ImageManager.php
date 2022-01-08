@@ -6,6 +6,7 @@ use Imagine\Gd\Imagine;
 use Imagine\Image\Box;
 use Knp\Component\Pager\Paginator;
 use Doctrine\ORM\EntityManager;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
@@ -41,12 +42,17 @@ class ImageManager
     protected $allowedFiletypes = array('image/jpeg', 'image/png');
 
     /**
+     * @var string
+     */
+    private $filepath;
+
+    /**
      * @param EntityManager $entityManager
-     * @param Paginator     $paginator
+     * @param PaginatorInterface     $paginator
      * @param string        $class
      * @param string        $filepath
      */
-    public function __construct(EntityManager $entityManager, Paginator $paginator, $class, $filepath)
+    public function __construct(EntityManager $entityManager, PaginatorInterface $paginator, $class, $filepath)
     {
         $this->entityManager = $entityManager;
         $this->paginator = $paginator;

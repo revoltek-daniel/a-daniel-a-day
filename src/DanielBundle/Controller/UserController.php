@@ -27,7 +27,7 @@ class UserController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $users = $em->getRepository('DanielBundle:User')->findAll();
+        $users = $em->getRepository(User::class)->findAll();
 
         return  array(
             'users' => $users,

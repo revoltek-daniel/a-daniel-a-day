@@ -97,7 +97,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $images = $em->getRepository('DanielBundle:Image')->findAll();
+        $images = $em->getRepository(Image::class)->findAll();
 
         return [
             'images' => $images,

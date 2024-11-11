@@ -18,7 +18,7 @@
         }
     },
     "require": {
-        "php": "^8.0",
+        "php": "^8.3",
         "cocur/slugify": "^3.1",
         "doctrine/doctrine-bundle": "*",
         "doctrine/doctrine-cache-bundle": "*",
@@ -29,7 +29,7 @@
         "sensio/framework-extra-bundle": "*",
         "symfony/monolog-bundle": "*",
         "symfony/polyfill-apcu": "*",
-        "symfony/symfony": "^v4.4.36",
+        "symfony/symfony": "^v4.4.51",
         "twig/extensions": "*",
         "twig/twig": "*"
     },
